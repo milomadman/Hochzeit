@@ -1,0 +1,39 @@
+html {
+	height: auto; /* Reset explicit height if set */
+	margin: 0; /* Reset margins */
+	padding: 0; /* Reset paddings */
+}
+
+body {
+	background-color: rgb(40, 40,40);
+	font-family: 'Montserrat', sans-serif;
+	line-height: 1.6;
+	margin: 0;
+	height: 500px;
+}
+
+.welcome {
+    color: white;
+    /*font-family: "Pinyon Script", cursive;*/
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 5vw;
+    text-align: center;
+    margin-top: 7%;
+}
+
+#welwhere {
+    font-size:2.5vw;
+}
+
+#welwho {
+    font-size: 7vw;
+    font-weight: 520;
+    line-height: 180%;
+}
+
+#link {
+    color: white;
+    font-size:2vw;
+}

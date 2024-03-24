@@ -1,0 +1,42 @@
+html {
+	height: auto; /* Reset explicit height if set */
+	margin: 0; /* Reset margins */
+	padding: 0; /* Reset paddings */
+}
+
+body {
+	/*background-image: url(background.jpg);*/
+    background-color: grey;
+	font-family: 'Montserrat', sans-serif;
+	line-height: 1.6;
+	margin: 0;
+	width:auto;
+    background-size: 100%;
+}
+
+#Lastenvelo {
+    width: 100%;
+}
+
+.piece {
+    cursor: pointer;
+}
+
+button {
+	font-size:30px;
+	border: none;
+	background: none;
+	cursor: pointer;
+	position: fixed;
+	
+}
+
+#question {
+	top: 5px;
+	right: 5px;
+}
+
+#home {
+	top: 5px;
+	left: 5px;
+}

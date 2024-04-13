@@ -55,12 +55,31 @@ button {
 /* Modal Content/Box */
 .modal-content {
 	background-color:  rgb(40, 40,40);
-	margin: 15% auto; /* 15% from the top and centered */
+	margin: 5% auto; /* 15% from the top and centered */
 	padding: 20px;
 	border: 1px solid #888;
 	width: 80%; /* Could be more or less, depending on screen size */
 }
   
+
+#info {
+    position: absolute;
+    width: auto;
+    height: auto;
+    padding: 10px;
+    background-color:  rgb(40, 40,40);
+	border: 1px solid #888;/*
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    pointer-events: none;*/
+    opacity: 0
+}
+
+
 /* The Close Button */
 .close {
 	color: #aaa;
@@ -78,12 +97,21 @@ button {
 
 p {
 	color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1.5vw;
+    text-align: left;
+}
+
+h1 {
+	color: white;
     /*font-family: "Pinyon Script", cursive;*/
     font-family: 'Courier New', Courier, monospace;
     font-weight: 500;
     font-style: normal;
     font-size: 2vw;
-    text-align: left;
+    text-align: center;
 }
 
 .image-container {
@@ -116,26 +144,14 @@ p {
 .Bikepart:hover{
 	cursor: pointer;
 	fill: rgba(92, 206, 219, 0.3);
+	stroke:  white;
+	stroke-width: 0.2px;
 }
 
 .Bikepart {
 	fill: transparent;
 }
 
-#info {
-    position: absolute;
-    width: auto;
-    height: auto;
-    padding: 10px;
-    background-color: white;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-    -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
-    -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
-    pointer-events: none;
-    opacity: 0
-}
+
 
 

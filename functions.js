@@ -65,48 +65,101 @@ document.querySelector('.clickable-map').addEventListener('click', function(even
 });
 
 document.querySelector('.clickable-map').addEventListener('dblclick', function(event){
-  polygon += "'>";
   console.log(polygon);
-  polygon = "<polygon class='Bikepart' id='' points='";
+  polygon = "";
 });
 
 
-
 async function loadBikeParts() {
-  const response = await fetch('bikeparts.json');
-  const data = await response.json();
+  try {
+    const response = await fetch('bikeparts.json');
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+    const svgNamespace = "http://www.w3.org/2000/svg";
+    const xlinkNamespace = "http://www.w3.org/1999/xlink";
+    const bikePartsContainer = document.getElementById('bikeparts');
 
-  const svgNamespace = "http://www.w3.org/2000/svg";
-  const xlinkNamespace = "http://www.w3.org/1999/xlink";
-
-  data.bikeParts.forEach(part => {
-    const link = document.createElementNS(svgNamespace, 'a');
-
-    if (part.id == "Dessert"){
-      link.setAttributeNS(xlinkNamespace, 'xlink:href', 'DessertGift.html');
-    } else {
-      link.setAttributeNS(xlinkNamespace, 'xlink:href', 'contactform.html');
+    if (!bikePartsContainer) {
+      console.error('The element #bikeparts does not exist!');
+      return;
     }
 
-    
-    const shape = document.createElementNS(svgNamespace, part.type);
-    
-    for (const [key, value] of Object.entries(part.attributes)) {
-      shape.setAttribute(key, value);
-    }
-    shape.setAttribute('class', 'Bikepart');
-    shape.setAttribute('id', part.id);
-    shape.setAttribute('cost', part.cost);
-    shape.setAttribute('notes', part.text)
+    data.bikeParts.forEach(part => {
+      const link = document.createElementNS(svgNamespace, 'a');
+
+      link.setAttributeNS(xlinkNamespace, 'xlink:href', part.id === "Dessert" ? 'DessertGift.html' : 'contactform.html');
 
 
+      const group = document.createElementNS(svgNamespace, 'g');
+      group.setAttribute('data-id', part.id); // Use custom data attribute for more flexibility
+      group.setAttribute('class', 'BikepartGroup');
 
-    link.appendChild(shape);
-    document.getElementById('bikeparts').appendChild(link);
+
+      if (part.type === "ellipse" || part.type === "polygon") {
+        const elementsToCreate = part.type === "polygon" ? part.polygons : [part];
+        elementsToCreate.forEach(elementData => {
+          const shape = document.createElementNS(svgNamespace, part.type);
+          if (part.type === "polygon") {
+            shape.setAttribute("points", elementData.points);
+          }
+          if (elementData.attributes) {
+            for (const [key, value] of Object.entries(elementData.attributes)) {
+              shape.setAttribute(key, value);
+            }
+          }
+          shape.setAttribute('class', 'Bikepart');
+          shape.setAttribute('id', part.id);
+          shape.setAttribute('cost', part.cost);
+          shape.setAttribute('notes', part.text);
+
+          group.appendChild(shape);
+
+          shape.addEventListener('mouseover', function(event) {
+            shape.style.cursor = 'pointer';
+            shape.style.fill = 'rgba(92, 206, 219, 0.3)';
+            shape.style.stroke = 'white';
+            shape.style.strokeWidth = '0.2px';
+          });
+
+          shape.addEventListener('mouseout', function(event) {
+            shape.style.cursor = 'default';
+            shape.style.fill = ''; // Reset fill to default
+            shape.style.stroke = ''; // Reset stroke to default
+            shape.style.strokeWidth = ''; // Reset stroke width to default
+          });
+                    
+
+        });
+      }
+      link.appendChild(group);
+      bikePartsContainer.appendChild(link);
+    });
+
+  } catch (error) {
+    console.error('Failed to load bike parts:', error);
+  }
+
+  document.querySelectorAll('.BikepartGroup').forEach(group => {
+    group.addEventListener('mouseover', () => {
+      group.childNodes.forEach(node => {
+        node.style.fill = 'rgba(92, 206, 219, 0.3)';
+        node.style.stroke = 'white';
+        node.style.strokeWidth = '0.2px';
+      });
+    });
+
+    group.addEventListener('mouseout', () => {
+      group.childNodes.forEach(node => {
+        node.style.fill = ''; // Reset fill
+        node.style.stroke = ''; // Reset stroke
+        node.style.strokeWidth = ''; // Reset stroke width
+      });
+    });
   });
 }
 
 loadBikeParts();
 
-
-
+/*,*/

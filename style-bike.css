@@ -64,6 +64,7 @@ button {
 
 #info {
     position: absolute;
+	z-index: 3;
     width: auto;
     height: auto;
     padding: 10px;
@@ -141,12 +142,6 @@ h1 {
     fill: rgba(255, 0, 0, 0.5); /* Example styling */
 }
 
-.Bikepart:hover{
-	cursor: pointer;
-	fill: rgba(92, 206, 219, 0.3);
-	stroke:  white;
-	stroke-width: 0.2px;
-}
 
 .Bikepart {
 	fill: transparent;

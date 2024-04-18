@@ -32,9 +32,20 @@ svgContainer.addEventListener('mouseover', function(event) {
   if (event.target.closest('a') && event.target.classList.contains('Bikepart')) {
     
     infobox.style.opacity = 0.9;
-    infobox.style.left = event.clientX + 50 + "px";
-    infobox.style.top = event.clientY + "px";
+
+    var picHeight = (window.innerWidth*245)/400;
+    if (event.clientX > 0.7*window.innerWidth){
+      infobox.style.top = event.clientY - 0.33*picHeight + "px";
+      infobox.style.left = event.clientX - 0.12*window.innerWidth + "px";
+    } else if (event.clientY > 0.7*picHeight){
+      infobox.style.top = event.clientY - 0.13*picHeight + "px";
+      infobox.style.left = event.clientX + 50 + "px";
+    } else {
+      infobox.style.top = event.clientY + "px";
+      infobox.style.left = event.clientX + 50 + "px";
+    }
     
+
     document.getElementById("Piece").innerHTML = event.target.id;
     document.getElementById("cost").innerHTML = "Kosten: "+ event.target.getAttribute("cost") + "CHF";
     document.getElementById("Text").innerHTML = event.target.getAttribute("notes");

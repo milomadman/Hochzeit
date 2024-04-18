@@ -35,7 +35,7 @@ svgContainer.addEventListener('mouseover', function(event) {
 
     var picHeight = (window.innerWidth*245)/400;
     if (event.clientX > 0.7*window.innerWidth){
-      infobox.style.top = event.clientY - 0.33*picHeight + "px";
+      infobox.style.top = event.clientY - 0.13*picHeight + "px";
       infobox.style.left = event.clientX - 0.12*window.innerWidth + "px";
     } else if (event.clientY > 0.7*picHeight){
       infobox.style.top = event.clientY - 0.13*picHeight + "px";
@@ -80,6 +80,14 @@ document.querySelector('.clickable-map').addEventListener('dblclick', function(e
   polygon = "";
 });
 
+document.querySelector("#info").addEventListener('mouseover', function(event){
+  var infobox = document.getElementById("info");
+
+  if (infobox.style.opacity == 0){
+    infobox.style.top = "0px";
+    console.log(infobox.style.top);
+  }
+});
 
 async function loadBikeParts() {
   try {

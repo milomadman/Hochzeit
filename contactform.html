@@ -13,38 +13,52 @@
 
 <body>
     <div class="welcome">
-
-        <form id="giftForm" class="Form">
-            <input type="hidden" name="utf8" value="✓">
-
-            <div class="LabelAndInput">
-                <label for="Name">Dein Name:</label>
-                <input type="text" id="Name" name="Name">
-            </div>
-            <div class="LabelAndInput">
-                <label for="Email-address">Deine Email Addresse:</label>
-                <input type="email" id="Email-address" name="Email">
-            </div>
-            <div class="LabelAndInput">
-                <label for="Geschenk">Geschenk:</label>
-                <input type="text" id="Geschenk" name="Geschenk">
-            </div>
-            <!--
-                div class="LabelAndInput">
-                <label for="Betrag">Betrag:</label>
-                <input type="text" id="Betrag" name="Betrag">
-            </div>
-
-            -->
-            
-            <div id="AbschickKnopf">
-                <button id="abschicken" type="submit">Abschicken</button>
+        <img src="sunflower.svg" alt="sunflower" class="sunflowers" id="leftsunflower"/>
+        <p> 
+            Danke, dass du etwas ausgewählt hast!
+        </p>
+        <img src="sunflower.svg" alt="sunflower" class="sunflowers" id="rightsunflower"/>
+        
+        <div id="Content">
+            <div id="explanations" class="sidebyside">
+                <p> 
+                    Bitte gib uns doch deinen Namen, dein Geschenk und allenfalls eine Nachricht an! 
+                    Unsere Bankangaben lauten:
+                </p>
+                <p id="Kontoangaben">
+                    <strong>Addresse:</strong><br>
+                    Tamara Lengacher, Rainweg 22, 3626 Hünibach<br>
+                    <strong>IBAN:</strong><br>
+                    CH28 0839 0039 9438 1000 7<br>
+                    <strong>Bank:</strong><br>
+                    Alternative Bank Schweiz
+                </p>
             </div>
 
-        </form>
+            <form id="giftForm" class="Form sidebyside">
+                <input type="hidden" name="utf8" value="✓">
+
+                <div class="LabelAndInput">
+                    <label for="Name">Dein Name:</label>
+                    <input type="text" id="Name" name="Name" placeholder="">
+                </div>
+                <div class="LabelAndInput">
+                    <label for="Geschenk">Geschenk:</label>
+                    <input type="text" id="Geschenk" name="Geschenk" placeholder="3 Speichen">
+                </div>
+                <div class="LabelAndInput">
+                    <label for="Mitteilung">Mitteilung:</label>
+                    <textarea type="text" id="Mitteilung" name="Mitteilung" placeholder="Du darfst uns hier gerne etwas mitteilen!"></textarea>
+                </div>
+                <div id="AbschickKnopf">
+                    <button id="abschicken" type="submit">Abschicken</button>
+                </div>
+            </form>
+        </div>
+
         
 
-        <a href="bike.html" id="link">Zurück zum Velo</a>
+        <a href="bike.html" class="link">Zurück zum Velo</a>
         <div id="animationContainer"></div>
     </div>  
     

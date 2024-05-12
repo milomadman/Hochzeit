@@ -1,7 +1,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 
 <head>
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="styledesert.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,34 +12,48 @@
 </head>
 
 <body>
-    <div class="welcome"> 
-
-        <form id="dessertForm" class="Form">
-            <input type="hidden" name="utf8" value="✓">
-
-            <div class="LabelAndInput">
-                <label for="Name">Dein Name:</label>
-                <input type="text" id="Name" name="Name">
-            </div>
-            <div class="LabelAndInput">
-                <label for="Email-address">Deine Email Addresse:</label>
-                <input type="email" id="Email-address" name="Email">
-            </div>
-            <div class="LabelAndInput">
-                <label for="Dessert">Art des Dessert:</label>
-                <input type="text" id="Dessert" name="Dessert">
-            </div>
-            
-            
-            <div id="AbschickKnopf">
-                <button id="abschicken" type="submit">Abschicken</button>
-            </div>
-
-        </form>
-
-        <div id="animationContainer"></div>
+    <div class="welcome">
+        <img src="sunflower.svg" alt="sunflower" class="sunflowers" id="leftsunflower"/>
+        <p> 
+            Danke, dass du etwas ausgewählt hast!
+        </p>
+        <img src="sunflower.svg" alt="sunflower" class="sunflowers" id="rightsunflower"/>
         
-        <a href="bike.html" id="link">Zurück zum Velo</a>
+        <div id="Content">
+            <div id="explanations" class="sidebyside">
+                <p> 
+                    Bitte gib uns doch deinen Namen, dein Dessert und allenfalls eine Nachricht an! 
+                </p>
+                <p id="schlemm">
+                    Wir freuen uns, unsere Bäuche vollzuschlagen!
+                </p>
+            </div>
+
+            <form id="giftForm" class="Form sidebyside">
+                <input type="hidden" name="utf8" value="✓">
+
+                <div class="LabelAndInput">
+                    <label for="Name">Dein Name:</label>
+                    <input type="text" id="Name" name="Name" placeholder="">
+                </div>
+                <div class="LabelAndInput">
+                    <label for="Geschenk">Dessert:</label>
+                    <input type="text" id="Geschenk" name="Geschenk" placeholder="Vegane Brownies">
+                </div>
+                <div class="LabelAndInput">
+                    <label for="Mitteilung">Mitteilung:</label>
+                    <textarea type="text" id="Mitteilung" name="Mitteilung" placeholder="Du darfst uns hier gerne etwas mitteilen!"></textarea>
+                </div>
+                <div id="AbschickKnopf">
+                    <button id="abschicken" type="submit">Abschicken</button>
+                </div>
+            </form>
+        </div>
+
+        
+
+        <a href="bike.html" class="link">Zurück zum Velo</a>
+        <div id="animationContainer"></div>
     </div>  
     
     <form action="https://app.99inbound.com/api/e/123456" method="POST" target="_blank">    </form>

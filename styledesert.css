@@ -28,13 +28,14 @@ body {
 }
 
 #welwhere {
+    margin-top: 3vw;
     font-size:2.5vw;
 }
 
 #welwho {
     font-size: 7vw;
     font-weight: 520;
-    line-height: 220%;
+    line-height: 180%;
 }
 
 .link {
@@ -85,25 +86,19 @@ textarea::placeholder, input::placeholder {
     margin-bottom: 0%;
 }
 
-.sidebyside {
-    flex: 1;
-
-}
 
 #explanations {
-    font-size: 1.5vw;
+    flex: 1;
+    font-size: 1.7vw;
     text-align: left;
     margin-left:6%;
-    margin-right: 3%
+    margin-right: 3%;
 }
 
-#Kontoangaben {
-    padding-left: 5%;
-    padding-top: 2%;
-    font-size: 1.3vw;
-}
 
 .Form{
+    margin-left: 2vw;
+    flex: 1.7;
     overflow: hidden;
 }
 
@@ -168,4 +163,8 @@ p {
 #leftsunflower {
 	top: 2vw;
 	left: 1vw;
+}
+
+#schlemm {
+    margin-top:4.7vw ;
 }

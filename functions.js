@@ -10,7 +10,7 @@ function showinfo() {
 
 
 btn.onclick = function () {
-    modal.style.display = "block";
+  modal.style.display = "block";
 }
 
 span.onclick = function() {
@@ -85,7 +85,7 @@ document.querySelector("#info").addEventListener('mouseover', function(event){
 
   if (infobox.style.opacity == 0){
     infobox.style.top = "0px";
-    console.log(infobox.style.top);
+    console.log("hey still need to fix me")
   }
 });
 
@@ -104,8 +104,10 @@ async function loadBikeParts() {
       console.error('The element #bikeparts does not exist!');
       return;
     }
+    
 
     data.bikeParts.forEach(part => {
+
       const link = document.createElementNS(svgNamespace, 'a');
 
       link.setAttributeNS(xlinkNamespace, 'xlink:href', part.id === "Dessert" ? 'DessertGift.html' : 'contactform.html');
@@ -156,9 +158,12 @@ async function loadBikeParts() {
       bikePartsContainer.appendChild(link);
     });
 
+
+
   } catch (error) {
     console.error('Failed to load bike parts:', error);
   }
+  
 
   document.querySelectorAll('.BikepartGroup').forEach(group => {
     group.addEventListener('mouseover', () => {

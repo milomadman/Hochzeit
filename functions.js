@@ -2,6 +2,7 @@ var modal = document.getElementById("modal");
 var btn = document.getElementById("question");
 var span = document.getElementsByClassName("close")[0];
 
+console.log(modal);
 modal.style.display = "block";
 
 function showinfo() {

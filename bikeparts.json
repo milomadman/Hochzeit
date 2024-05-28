@@ -36,7 +36,7 @@
           "ry": "4" 
         },
         "cost": "0",
-        "text": "Wir uns sehr über ein Dessert an der Hochzeit!"
+        "text": "Wir freuen uns sehr über jedes Dessert an der Hochzeit!"
       },
       {
         "id": "Akku",
@@ -370,7 +370,7 @@
           }
         ],
         "cost": "650",
-        "text": "Damit wir es nicht allzu streng wird!"
+        "text": "Damit es nicht allzu streng wird!"
       },
       {
         "id": "Schloss",

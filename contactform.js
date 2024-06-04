@@ -35,6 +35,7 @@ document.getElementById('giftForm').addEventListener('submit', function(event) {
         return response.json();
     })
     .then(data => {
+        alert('Thank you for your submission!');
         startAnimation();
         document.getElementById('Name').value = '';
         document.getElementById('Geschenk').value = '';

@@ -4,15 +4,15 @@ document.getElementById('dessertForm').addEventListener('submit', function(event
     // Get form data
     var formData = new FormData(event.target);
     var name = formData.get('Name');
-    var email = formData.get('Email');
-    var gift = formData.get('Dessert');
+    var dessert = formData.get('Dessert');
+    var message = formData.get('Mitteilung');
   
     // Construct the JSON object to be sent to Airtable
     var requestBody = JSON.stringify({
         "fields": {
             "Name": name,
-            "Email": email,
             "Dessert": dessert,
+            "Mitteilung": message,
         }
     });
   
@@ -35,6 +35,11 @@ document.getElementById('dessertForm').addEventListener('submit', function(event
         console.log('Success:', data);
         alert('Thank you for your submission!');
         startAnimation();
+        document.getElementById('Name').value = '';
+        document.getElementById('Dessert').value = '';
+        document.getElementById('Mitteilung').value = '';
+        document.getElementById('Dessert').placeholder = '';
+        document.getElementById('Mitteilung').placeholder = '';
     })
     .catch(error => {
         console.error('Error:', error);
